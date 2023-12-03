@@ -3,7 +3,7 @@ blocks:
   color: null
   configuration: {}
   downstream_blocks:
-  - fixtures_bq_load
+  - add_repl_date_column_fixtures
   executor_config: null
   executor_type: local_python
   has_callback: false
@@ -23,18 +23,19 @@ blocks:
   executor_type: local_python
   has_callback: false
   language: python
-  name: fixtures_bq_load
+  name: fixtures_bq_export
   retry_config: null
   status: executed
   timeout: null
   type: data_exporter
   upstream_blocks:
-  - fixtures_data_loader
-  uuid: fixtures_bq_load
+  - add_repl_date_column_fixtures
+  uuid: fixtures_bq_export
 - all_upstream_blocks_executed: true
   color: null
   configuration: {}
-  downstream_blocks: []
+  downstream_blocks:
+  - add_repl_date_column_teams
   executor_config: null
   executor_type: local_python
   has_callback: false
@@ -54,13 +55,49 @@ blocks:
   executor_type: local_python
   has_callback: false
   language: python
-  name: venues_data_loader
+  name: teams_bq_export
   retry_config: null
   status: executed
   timeout: null
-  type: data_loader
-  upstream_blocks: []
-  uuid: venues_data_loader
+  type: data_exporter
+  upstream_blocks:
+  - add_repl_date_column_teams
+  uuid: teams_bq_export
+- all_upstream_blocks_executed: true
+  color: null
+  configuration: {}
+  downstream_blocks:
+  - teams_bq_export
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: add repl_date_column_teams
+  retry_config: null
+  status: executed
+  timeout: null
+  type: transformer
+  upstream_blocks:
+  - teams_data_loader
+  uuid: add_repl_date_column_teams
+- all_upstream_blocks_executed: true
+  color: null
+  configuration: {}
+  downstream_blocks:
+  - fixtures_bq_export
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: add_repl_date_column_fixtures
+  replicated_block: add_repl_date_column_teams
+  retry_config: null
+  status: executed
+  timeout: null
+  type: transformer
+  upstream_blocks:
+  - fixtures_data_loader
+  uuid: add_repl_date_column_fixtures
 callbacks: []
 concurrency_config: {}
 conditionals: []
@@ -80,6 +117,6 @@ settings:
 spark_config: {}
 tags: []
 type: python
-updated_at: '2023-12-03 20:23:27'
+updated_at: '2023-12-03 21:05:20'
 uuid: fixtures_data
 widgets: []
