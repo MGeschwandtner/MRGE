@@ -4,17 +4,18 @@ on: [push]
 jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
+    #grant permissions to created a tokenfile in order to use workload identity pools of github for authentication
     permissions:
       contents: 'read'
       id-token: 'write'
 
     steps:
+    # authenticate against gcloud https://github.com/google-github-actions/setup-gcloud
     - id: 'auth'
       uses: 'google-github-actions/auth@v1'
       with:
         workload_identity_provider: 'projects/343329432514/locations/global/workloadIdentityPools/github-actions'
         service_account: 'mrge-workload-identity@mrge-406006.iam.gserviceaccount.com'
-
     - name: 'Set up Cloud SDK'
       uses: 'google-github-actions/setup-gcloud@v1'
 
