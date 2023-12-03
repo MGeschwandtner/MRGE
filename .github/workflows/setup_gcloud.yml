@@ -1,0 +1,18 @@
+jobs:
+  job_id:
+    permissions:
+      contents: 'read'
+      id-token: 'write'
+
+    steps:
+    - id: 'auth'
+      uses: 'google-github-actions/auth@v1'
+      with:
+        workload_identity_provider: 'projects/343329432514/locations/global/workloadIdentityPools/github-actions'
+        service_account: 'mrge-workload-identity@mrge-406006.iam.gserviceaccount.com'
+
+    - name: 'Set up Cloud SDK'
+      uses: 'google-github-actions/setup-gcloud@v1'
+
+    - name: 'Use gcloud CLI'
+      run: 'gcloud info'
