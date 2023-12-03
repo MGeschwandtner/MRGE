@@ -19,5 +19,10 @@ jobs:
     - name: 'Set up Cloud SDK'
       uses: 'google-github-actions/setup-gcloud@v1'
 
-    - name: 'Use gcloud CLI'
-      run: 'gcloud info'
+    - name: 'create-dbt-service-account'
+      run: 'gcloud iam service-accounts create dbt-480'
+    - name: 'provision-dbt-service-account-rights'
+      run: 'gcloud iam service-accounts create dbt-480'
+    - name: 'create-bq-dataset-raw-api-football'
+      run: 'bq --location=EU mk -dataset raw_api_football'
+
