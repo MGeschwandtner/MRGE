@@ -1,8 +1,9 @@
+name: Setup Gcloud Env
+run-name: ${{ github.actor }} is setting up gcloud
+on: [push]
 jobs:
-  job_id:
-    permissions:
-      contents: 'read'
-      id-token: 'write'
+  Explore-GitHub-Actions:
+    runs-on: ubuntu-latest
 
     steps:
     - id: 'auth'
