@@ -38,6 +38,17 @@ In this challenge, you will be tasked with designing and implementing a data pip
 - https://www.api-football.com/news/post/how-to-get-all-teams-and-players-from-a-league-id
 
 ## Key Features
+### Pipeline
+- one pipeline which contains all steps of the elt process
+- ![image](https://github.com/MGeschwandtner/MRGE/assets/152589902/9c2968ec-98fd-4bbe-bf4e-9db381ad0a4e)
+### Have a modular approach for requesting the API
+- https://github.com/MGeschwandtner/MRGE/blob/main/mage/utils/helpers/http_load.py
+- https://github.com/MGeschwandtner/MRGE/blob/main/mage/data_loaders/teams_data_loader.py
+### Make it backfillable in case of historic needs
+- https://github.com/MGeschwandtner/MRGE/blob/e2a0849154be9e14ef2ee4c704d1f059e899ea13/mage/data_loaders/fixtures_data_loader.py#L23
+### Have a modular approach for testing(not made tests first class citizens for the case study though - just for demo purpose right now)
+- https://github.com/MGeschwandtner/MRGE/blob/main/mage/utils/helpers/load_tests.py
 
+### have a flat output layer in the dwh for lightning speed in case of data visualization tools
 
 
