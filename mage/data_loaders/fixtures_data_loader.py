@@ -18,7 +18,7 @@ def load_data(*args, **kwargs):
     load fixtures data from rapid api
 
     Returns:
-        Anything (e.g. data frame, dictionary, array, int, str, etc.)
+        pandas DataFrame
     """
     execution_date = kwargs.get('execution_date')
     current_season_str = str(execution_date.year) if execution_date.month > 6 else str(execution_date.year - 1)
