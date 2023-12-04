@@ -53,7 +53,7 @@ models:
   - name: f_fixtures
     description: "A starter dbt model"
     columns:
-      - name: id
+      - name: fixture_id
         description: "The primary key for this table"
         tests:
           - unique
