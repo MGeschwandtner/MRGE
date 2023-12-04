@@ -13,12 +13,12 @@ API_HOST_SUFFIX = "v3/"
 
 
 @data_loader
-def load_data(*args, **kwargs):
+def load_data(*args, **kwargs) -> pd.DataFrame:
     """
-    Template code for loading data from any source.
+    load teams data from rapid api
 
     Returns:
-        Anything (e.g. data frame, dictionary, array, int, str, etc.)
+        pd.DataFrame
     """
     execution_date = kwargs.get('execution_date')
     current_season_str = str(execution_date.year) if execution_date.month > 6 else str(execution_date.year - 1)
