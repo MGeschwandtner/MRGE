@@ -13,7 +13,7 @@ API_HOST_SUFFIX = "v3/"
 
 
 @data_loader
-def load_data(*args, **kwargs):
+def load_data(*args, **kwargs) -> pd.DataFrame:
     """
     load fixtures data from rapid api
 
