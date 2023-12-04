@@ -15,7 +15,7 @@ API_HOST_SUFFIX = "v3/"
 @data_loader
 def load_data(*args, **kwargs):
     """
-    Template code for loading data from any source.
+    load teams data from rapid api
 
     Returns:
         Anything (e.g. data frame, dictionary, array, int, str, etc.)
