@@ -5,7 +5,7 @@ with fixtures as (select * from {{ source("football_api_data", "fixtures") }}),
 fixtures_subset as (
 select
     fixture.date as fixture_datetime,
-    fixture.id fixture_id,
+    fixture.id id,
     fixture.referee as referee,
     fixture.status.elapsed as fixture_elapsed_minutes,
     fixture.status.long as fixture_game_status_long_string,
