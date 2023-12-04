@@ -53,15 +53,26 @@ models:
   - name: f_fixtures
     description: "A starter dbt model"
     columns:
-      - name: id
+      - name: fixture_id
         description: "The primary key for this table"
         tests:
           - unique
           - not_null
+      - name: venue_key
+        tests:
+          - relationships:
+              to: ref('customers')
+              field: venue_key
+      - name: fixture_key
+        tests:
+          - relationships:
+              to: ref('d_fixtures')
+              field: fixture_key
+      
   - name: flat_ligue_1_table
     description: "A starter dbt model"
     columns:
-      - name: id
+      - name: teamname
         description: "The primary key for this table"
         tests:
           - unique
