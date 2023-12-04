@@ -1,5 +1,32 @@
 version: 2
 
+models:
+    - name: raw_fixtures
+      description: "A starter dbt model"
+      columns:
+          - name: id
+            description: "The primary key for this table"
+            tests:
+                - unique
+                - not_null
+
+    - name: raw_teams
+      description: "A starter dbt model"
+      columns:
+          - name: id
+            description: "The primary key for this table"
+            tests:
+                - unique
+                - not_null
+    - name: raw_venues
+      description: "A starter dbt model"
+      columns:
+          - name: id
+            description: "The primary key for this table"
+            tests:
+                - unique
+                - not_null
+
 sources:
   - name: football_api_data
     description: "data from football api containing information about ligue a "
