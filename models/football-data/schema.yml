@@ -61,7 +61,7 @@ models:
   - name: flat_ligue_1_table
     description: "A starter dbt model"
     columns:
-      - name: id
+      - name: name
         description: "The primary key for this table"
         tests:
           - unique
