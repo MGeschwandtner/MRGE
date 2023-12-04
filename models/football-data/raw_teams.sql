@@ -1,0 +1,1 @@
+select * from {{ source('football_api_data', 'fixtures') }}

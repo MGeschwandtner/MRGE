@@ -1,0 +1,12 @@
+version: 2
+
+sources:
+  - name: football_api_data
+    description: "data from football api containing information about ligue a "
+    database: mrge-406006
+    schema: raw_api_football
+    tables:
+      - name: fixtures
+        description: "holds match information"
+      - name: teams
+        description: "holds information about clubs"
