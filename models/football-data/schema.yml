@@ -35,7 +35,7 @@ models:
           - unique
           - not_null
   - name: d_referee
-    description: "A starter dbt model"
+    description: "the referee dimension table"
     columns:
       - name: id
         description: "The primary key for this table"
