@@ -37,7 +37,7 @@ models:
   - name: d_referee
     description: "the referee dimension table"
     columns:
-      - name: id
+      - name: referee_key
         description: "The primary key for this table"
         tests:
           - unique
