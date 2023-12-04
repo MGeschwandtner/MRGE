@@ -19,7 +19,7 @@ select
     goals.home as fixture_home_team_goals,
     goals.away as fixture_away_team_goals,
     score.halftime.away as fixture_away_team_goals_halftime,
-    score.halftime.home as fixture_away_team_goals_halftime,
+    score.halftime.home as fixture_home_team_goals_halftime,
     repl_date
 from fixtures
 order by fixture.date

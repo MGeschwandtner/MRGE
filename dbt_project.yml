@@ -34,13 +34,5 @@ clean-targets: # directories to be removed by `dbt clean`
 # using the `{{ config(...) }}` macro.
 
 models:
-  mrge_case_study:
-    # Applies to all files under models/example/
     football-data:
       +materialized: table
-    target: prod
-    outputs:
-      prod:
-        dataset: raw_football_data
-      dev:
-        dataset: raw_football_data_dev
